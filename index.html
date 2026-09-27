@@ -120,6 +120,41 @@ body{background:#f9d8e3}
 .puzzle-wrap{width:min(470px,62vh,72vw)}
 .puzzle .tile{background-repeat:no-repeat}
 @media(max-width:760px){#door .door-wrap{width:min(300px,62vw);height:min(53vh,470px);min-height:320px}.exhibit{max-height:calc(100svh - 150px)}.exhibit .frame{height:min(48vh,390px)}.exhibit-copy{max-height:30vh}.screen .content{width:min(94vw,680px)}}
+
+/* --- V6 visual polish --- */
+.gallery-grid{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(3,minmax(0,1fr));height:min(61vh,600px);max-height:none;gap:14px;overflow:visible}
+.gallery-grid .card{grid-column:auto!important;grid-row:auto!important;--r:0deg;min-height:0;height:100%;display:flex;flex-direction:column;padding:7px;border-width:7px;border-radius:18px}
+.gallery-grid .card img{flex:1;min-height:0;height:auto;width:100%;object-fit:contain;background:#fbf4ea;border-radius:10px}
+.gallery-grid .caption{font-size:1.05rem;line-height:1.05;padding:6px 4px;min-height:27px}
+.gallery-grid .card:hover{transform:translateY(-7px) scale(1.025) rotate(0);z-index:5}
+/* puzzle controls: make the swap action unmistakably visible */
+.puzzle-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:12px}
+.swap-btn{min-width:210px}
+.swap-btn:disabled{opacity:.45;cursor:not-allowed;transform:none!important;box-shadow:none}
+.puzzle-help{font-family:Caveat;font-size:1.2rem;color:#74435a;margin:4px 0 2px}
+/* name-art tree */
+.name-art{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);white-space:nowrap;text-align:center;z-index:4;pointer-events:none}
+.name-art .names{font-family:Caveat,cursive;font-size:clamp(2.5rem,5vw,4.8rem);font-weight:700;color:#7e2349;line-height:.8;text-shadow:0 5px 18px rgba(126,35,73,.14)}
+.name-art .heart{font-size:clamp(2rem,4vw,3.5rem);color:#ef5d91;display:inline-block;margin:0 .15em;animation:pulse 1.5s infinite}
+.name-art .tiny{font-family:'Cormorant Garamond',serif;font-size:clamp(.9rem,1.5vw,1.2rem);letter-spacing:.2em;color:#9a5c74;text-transform:uppercase;margin-top:8px}
+/* letter: no inner scroll; the letter itself breathes and reveals as one room */
+#letterRoom .content{height:100%;display:flex;flex-direction:column}
+#letterRoom .room-head{flex:none}
+.letter-wrap{max-height:none;height:calc(100svh - 180px);overflow:auto;scrollbar-width:none;-ms-overflow-style:none;padding:clamp(22px,3vw,46px);display:block;scroll-behavior:smooth}
+.letter-wrap::-webkit-scrollbar{display:none}
+.letter{font-size:clamp(1.08rem,1.7vw,1.42rem);line-height:1.5;white-space:pre-wrap}
+.signature{margin-top:28px}
+/* keep all critical rooms comfortably inside the viewport */
+#gallery .content,#puzzle .content,#treeRoom .content,#promises .content{max-height:calc(100svh - 34px)}
+@media(max-width:760px){
+ .gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(5,minmax(0,1fr));height:calc(100svh - 205px);gap:9px}
+ .gallery-grid .card:nth-child(9){grid-column:span 2}
+ .gallery-grid .caption{font-size:.92rem;min-height:22px;padding:4px 2px}
+ .name-art .names{font-size:clamp(2.1rem,10vw,3.4rem)}
+ .letter-wrap{height:calc(100svh - 200px);padding:18px}
+ .letter{font-size:1.05rem;line-height:1.42}
+ .signature{font-size:1.5rem;margin-top:12px}
+}
 </style>
 </head>
 <body>
@@ -164,7 +199,7 @@ body{background:#f9d8e3}
   </section>
 
   <section class="screen" id="puzzle">
-    <div class="content"><div class="room-head"><div class="eyebrow">Room 05 · The restoration desk</div><h2>This photo fell <span class="script">apart.</span></h2><p>Nine pieces. Tap two to swap them. Put us back together.</p></div><div class="puzzle-wrap"><div class="puzzle" id="puzzleBoard"></div><div class="puzzle-info"><div class="sub">Moves: <b id="moves">0</b> · Time: <b id="timer">00:00</b></div><div class="win" id="win"></div><button class="btn ghost" onclick="shufflePuzzle()">Shuffle again</button></div></div></div>
+    <div class="content"><div class="room-head"><div class="eyebrow">Room 05 · The restoration desk</div><h2>This photo fell <span class="script">apart.</span></h2><p>Choose two pieces, then bring them back together.</p></div><div class="puzzle-wrap"><div class="puzzle" id="puzzleBoard"></div><div class="puzzle-info"><div class="puzzle-help" id="puzzleHelp">Tap one piece, then another.</div><div class="sub">Moves: <b id="moves">0</b> · Time: <b id="timer">00:00</b></div><div class="win" id="win"></div><div class="puzzle-actions"><button class="btn swap-btn" id="swapBtn" onclick="swapSelected()" disabled>Swap selected pieces</button><button class="btn ghost" onclick="shufflePuzzle()">Shuffle again</button></div></div></div></div>
   </section>
 
   <section class="screen" id="notes">
@@ -172,7 +207,7 @@ body{background:#f9d8e3}
   </section>
 
   <section class="screen" id="treeRoom">
-    <div class="content"><div class="room-head"><div class="eyebrow">Room 07 · The little tree</div><h2>Made for you, <span class="script">by hand.</span></h2><p>Every heart is one more reason this little thing keeps growing.</p></div><div class="tree-stage"><div class="tree"><span class="branch b1"></span><span class="branch b2"></span><span class="branch b3"></span><span class="branch b4"></span><i class="heart-leaf"></i><i class="heart-leaf"></i><i class="heart-leaf"></i><i class="heart-leaf"></i><i class="heart-leaf"></i></div></div></div>
+    <div class="content"><div class="room-head"><div class="eyebrow">Room 07 · The little tree</div><h2>Made for you, <span class="script">by hand.</span></h2><p>Every heart is one more reason this little thing keeps growing — <span class="script">Pankaj ♥ Kashish.</span></p></div><div class="tree-stage"><div class="tree"><span class="branch b1"></span><span class="branch b2"></span><span class="branch b3"></span><span class="branch b4"></span><i class="heart-leaf"></i><i class="heart-leaf"></i><i class="heart-leaf"></i><i class="heart-leaf"></i><i class="heart-leaf"></i></div><div class="name-art"><div class="names">Pankaj <span class="heart">♥</span> Kashish</div><div class="tiny">two names · one little world</div></div></div></div>
   </section>
 
   <section class="screen" id="promises">
@@ -245,7 +280,7 @@ const exhibits=[
 ['assets/memory-09.jpg','One more for the wall.','Because I am not done collecting moments with you.']];
 let ex=0;function renderEx(){const im=document.getElementById('exhibitImg');const fi=document.querySelector('.frame-inner');im.src=exhibits[ex][0];im.onload=()=>{fi.classList.toggle('landscape',im.naturalWidth>=im.naturalHeight);fi.classList.toggle('portrait',im.naturalWidth<im.naturalHeight)};document.getElementById('exTitle').textContent=exhibits[ex][1];document.getElementById('exCopy').textContent=exhibits[ex][2];document.getElementById('exNum').textContent=ex+1}function nextEx(){if(ex===exhibits.length-1){go('puzzle');return}ex++;renderEx()}function prevEx(){if(ex===0){go('gallery');return}ex--;renderEx()}
 // puzzle
-const puzzle=document.getElementById('puzzleBoard');let order=[0,1,2,3,4,5,6,7,8],selected=null,moves=0,startTime=null,timerInt=null;const img='assets/memory-01.jpg';function buildPuzzle(){puzzle.innerHTML='';order.forEach((n,pos)=>{const t=document.createElement('button');t.className='tile';t.style.backgroundImage=`url('${img}')`;t.style.backgroundPosition=`${(n%3)*50}% ${Math.floor(n/3)*50}%`;t.onclick=()=>selectTile(pos);puzzle.appendChild(t)})}function selectTile(pos){if(startTime===null){startTime=Date.now();timerInt=setInterval(()=>{const s=Math.floor((Date.now()-startTime)/1000);document.getElementById('timer').textContent='00:'+String(s).padStart(2,'0')},1000)}if(selected===null){selected=pos;puzzle.children[pos].classList.add('selected');return}if(selected===pos){puzzle.children[pos].classList.remove('selected');selected=null;return} [order[selected],order[pos]]=[order[pos],order[selected]];moves++;document.getElementById('moves').textContent=moves;selected=null;buildPuzzle();if(order.every((v,i)=>v===i)){clearInterval(timerInt);document.getElementById('win').textContent='You put us back together. ♥';hearts(18)}}function shufflePuzzle(){do{order=[...Array(9)].map((_,i)=>i).sort(()=>Math.random()-.5)}while(order.every((v,i)=>v===i));moves=0;selected=null;startTime=null;clearInterval(timerInt);document.getElementById('moves').textContent='0';document.getElementById('timer').textContent='00:00';document.getElementById('win').textContent='';buildPuzzle()}buildPuzzle();
+const puzzle=document.getElementById('puzzleBoard');const swapBtn=document.getElementById('swapBtn');const puzzleHelp=document.getElementById('puzzleHelp');let order=[0,1,2,3,4,5,6,7,8],selected=null,secondSelected=null,moves=0,startTime=null,timerInt=null;const img='assets/memory-01.jpg';function updateSwapUI(){swapBtn.disabled=!(selected!==null&&secondSelected!==null);if(selected!==null&&secondSelected===null)puzzleHelp.textContent='Now choose the second piece.';else if(selected!==null&&secondSelected!==null)puzzleHelp.textContent='Both are selected — swap them.';else puzzleHelp.textContent='Tap one piece, then another.'}function buildPuzzle(){puzzle.innerHTML='';order.forEach((n,pos)=>{const t=document.createElement('button');t.className='tile';if(pos===selected||pos===secondSelected)t.classList.add('selected');t.style.backgroundImage=`url('${img}')`;t.style.backgroundPosition=`${(n%3)*50}% ${Math.floor(n/3)*50}%`;t.setAttribute('aria-label',`Puzzle piece ${pos+1}`);t.onclick=()=>selectTile(pos);puzzle.appendChild(t)});updateSwapUI()}function selectTile(pos){if(startTime===null){startTime=Date.now();timerInt=setInterval(()=>{const s=Math.floor((Date.now()-startTime)/1000);document.getElementById('timer').textContent=String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')},1000)}if(selected===null){selected=pos;buildPuzzle();return}if(secondSelected===null){if(pos===selected){selected=null}else secondSelected=pos;buildPuzzle();return}if(pos===selected){selected=null;secondSelected=null;buildPuzzle();return}secondSelected=pos;buildPuzzle()}function swapSelected(){if(selected===null||secondSelected===null)return;[order[selected],order[secondSelected]]=[order[secondSelected],order[selected]];moves++;document.getElementById('moves').textContent=moves;selected=null;secondSelected=null;buildPuzzle();if(order.every((v,i)=>v===i)){clearInterval(timerInt);document.getElementById('win').textContent='You put us back together. ♥';puzzleHelp.textContent='Perfect. Some things are worth putting back together.';hearts(18)}}function shufflePuzzle(){do{order=[...Array(9)].map((_,i)=>i).sort(()=>Math.random()-.5)}while(order.every((v,i)=>v===i));moves=0;selected=null;secondSelected=null;startTime=null;clearInterval(timerInt);document.getElementById('moves').textContent='0';document.getElementById('timer').textContent='00:00';document.getElementById('win').textContent='';buildPuzzle()}buildPuzzle();
 // notes
 const noteData=[['🏠','Note 1','You feel like home.'],['🌷','Note 2','You make ordinary days feel like something worth keeping.'],['🫶','Note 3','I love you and every ordinary day with you.'],['💌','Note 4','I’m yours forever and ever.']];const ng=document.getElementById('notesGrid');noteData.forEach((n,i)=>{const d=document.createElement('button');d.className='note';d.innerHTML=`<div style="font-size:2rem">${n[0]}</div><div class="num">${n[1]}</div><div class="tease" style="margin:12px 0">tap to open</div><div class="secret">${n[2]}</div>`;d.onclick=()=>{if(!d.classList.contains('open')){d.classList.add('open');document.getElementById('noteCount').textContent=document.querySelectorAll('.note.open').length;showModal(n[1],n[2],n[0])}};ng.appendChild(d)});
 function showModal(t,b,e){document.getElementById('modalTitle').textContent=t;document.getElementById('modalBody').textContent=b;document.getElementById('modalEmoji').textContent=e;document.getElementById('modal').classList.remove('hide')}function closeModal(){document.getElementById('modal').classList.add('hide')}
@@ -266,7 +301,7 @@ Aap meri favourite memory bhi ho aur meri favourite future thought bhi. Aaj jitn
 I love you Guggie baby Beshumaar.
 
 Aap hamesha meri Guggieee bchaaa rahogi. 🫂❤️`;
-let typed=false;const letterEl=document.getElementById('letterText');const letterObs=new IntersectionObserver(es=>{if(es[0].isIntersecting&&!typed){typed=true;let i=0;const tick=()=>{letterEl.textContent=letter.slice(0,i++);if(i<=letter.length)setTimeout(tick,13)};tick()}},{threshold:.25});letterObs.observe(document.getElementById('letterRoom'));
+let typed=false;const letterEl=document.getElementById('letterText');const letterObs=new IntersectionObserver(es=>{if(es[0].isIntersecting&&!typed){typed=true;let i=0;const tick=()=>{letterEl.textContent=letter.slice(0,i++);const wrap=document.querySelector('.letter-wrap');if(wrap)wrap.scrollTop=wrap.scrollHeight;if(i<=letter.length)setTimeout(tick,13)};tick()}},{threshold:.25});letterObs.observe(document.getElementById('letterRoom'));
 function replay(){if(musicFadeTimer)clearInterval(musicFadeTimer);bgMusic.pause();bgMusic.currentTime=0;bgMusic.volume=.01;musicStarted=false;setMusicUI(false);window.scrollTo({top:0,behavior:'smooth'});setTimeout(()=>{document.getElementById('doorWrap').classList.remove('open');knocks=0;document.querySelectorAll('.dot').forEach(x=>x.classList.remove('active'));document.getElementById('doorHint').textContent='Tap the door… knock ×3';document.getElementById('giftBox').textContent='🎁';document.getElementById('giftText').textContent='tap to open'},800)}
 // gentle keyboard controls
 window.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();if(e.key==='ArrowDown')window.scrollBy({top:innerHeight,behavior:'smooth'});if(e.key==='ArrowUp')window.scrollBy({top:-innerHeight,behavior:'smooth'})});
