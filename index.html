@@ -14,7 +14,7 @@
 /* intro garden */
 #garden{background:linear-gradient(#fff2e1,#fbd3df)}.garden-copy{text-align:center;max-width:800px;margin:auto}.garden-copy h1{color:#7e2147}.garden-copy .sub{margin:20px auto 30px}.enter{margin-top:10px}.flowers{position:absolute;inset:0;pointer-events:none}.flower{position:absolute;width:clamp(42px,6vw,80px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#ffd96d 0 10%,transparent 11%),conic-gradient(#f47fa4 0 18%,#ffd1dd 18% 35%,#f47fa4 35% 52%,#ffd1dd 52% 69%,#f47fa4 69% 86%,#ffd1dd 86%);filter:drop-shadow(0 8px 8px rgba(126,33,71,.12));animation:float 5s ease-in-out infinite}.flower:after{content:"";position:absolute;inset:30%;background:#ffd36a;border-radius:50%}.f1{left:7%;top:15%;animation-delay:-1s}.f2{right:9%;top:18%;animation-delay:-2.4s}.f3{left:14%;bottom:16%;animation-delay:-3.1s}.f4{right:15%;bottom:13%;animation-delay:-.7s}.f5{left:48%;top:7%;transform:scale(.55);animation-delay:-1.8s}.vine{position:absolute;bottom:-30px;width:240px;height:340px;border-left:5px solid rgba(83,105,64,.4);border-radius:50%;transform:rotate(22deg);opacity:.65}.vine:after{content:'🌿';position:absolute;top:50px;left:0;font-size:100px;opacity:.5}@keyframes float{50%{transform:translateY(-18px) rotate(6deg)}}
 /* door */
-#door{background:linear-gradient(145deg,#f9e2c0,#f7c4d5)}.door-stage{text-align:center}.door-wrap{width:min(430px,75vw);height:min(640px,70vh);min-height:430px;margin:0 auto 25px;position:relative;perspective:1000px;cursor:pointer}.door-frame{position:absolute;inset:0;border:16px solid #9b5b36;border-radius:18px;background:#64381f;box-shadow:var(--shadow)}.door-panel{position:absolute;inset:18px;border-radius:8px;background:repeating-linear-gradient(90deg,#7b4829 0 45px,#704022 45px 51px);transform-origin:left center;transition:1.15s cubic-bezier(.2,.75,.15,1);box-shadow:inset -18px 0 30px rgba(0,0,0,.2)}.door-panel:before,.door-panel:after{content:"";position:absolute;left:12%;right:12%;height:27%;border:8px solid rgba(44,20,9,.35);border-radius:8px}.door-panel:before{top:10%}.door-panel:after{bottom:10%}.knob{position:absolute;right:10%;top:50%;width:36px;height:36px;border-radius:50%;background:#d9a84d;box-shadow:inset -4px -5px 7px rgba(0,0,0,.25);z-index:2}.door-wrap.open .door-panel{transform:rotateY(-102deg)}.knock{animation:knock .2s 3}.door-hint{font-family:Caveat;font-size:1.8rem}.dots{display:flex;gap:8px;justify-content:center;margin:15px}.dot{width:12px;height:12px;border-radius:50%;background:#d8a0b1}.dot.active{background:#7e2349;box-shadow:0 0 0 5px rgba(126,35,73,.1)}
+#door{background:linear-gradient(145deg,#f9e2c0,#f7c4d5)}.door-stage{text-align:center}.door-wrap{width:min(430px,30vw);height:min(64vh,590px);min-height:390px;margin:12px auto 8px;position:relative;perspective:1400px;cursor:pointer;filter:drop-shadow(0 28px 35px rgba(83,27,48,.18))}.door-frame{position:absolute;inset:0;border:16px solid #9b5b36;border-radius:18px;background:#64381f;box-shadow:var(--shadow)}.door-panel{position:absolute;inset:18px;border-radius:8px;background:linear-gradient(90deg,#744321,#89532f 12%,#6d3d22 24%,#89512e 38%,#6f3d22 52%,#89512e 68%,#6c3a20 82%,#8a5130);transform-origin:left center;transition:transform 1.15s cubic-bezier(.18,.8,.15,1),box-shadow .4s;box-shadow:inset -18px 0 30px rgba(0,0,0,.2),inset 8px 0 20px rgba(255,210,145,.08)}.door-panel-inset{position:absolute;left:10%;right:10%;height:28%;border:7px solid rgba(44,20,9,.36);border-radius:9px;box-shadow:inset 0 0 20px rgba(0,0,0,.12)}.door-panel-inset.top{top:9%}.door-panel-inset.bottom{bottom:9%}.door-knob{position:absolute;right:9%;top:52%;width:30px;height:30px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff0a6 0 9%,#d9a84d 18% 70%,#9b6424 100%);box-shadow:inset -4px -5px 7px rgba(0,0,0,.25);z-index:2}.knocker{position:absolute;left:50%;top:39%;width:78px;height:116px;transform:translateX(-50%);z-index:4;filter:drop-shadow(0 8px 8px rgba(0,0,0,.22));transform-origin:50% 20%;transition:transform .12s ease}.knocker-ring{position:absolute;left:50%;top:28px;width:58px;height:58px;border:9px solid #d6a24b;border-radius:50%;transform:translateX(-50%);background:rgba(80,38,15,.12);box-shadow:inset 0 0 0 2px #8b5a22}.knocker-handle{position:absolute;left:50%;top:6px;width:19px;height:50px;border-radius:10px;background:linear-gradient(#efc969,#a36a26);transform:translateX(-50%);box-shadow:inset -3px -4px 5px rgba(0,0,0,.25)}.door-wrap.knock .knocker{animation:knockerHit .38s cubic-bezier(.2,.8,.2,1)}@keyframes knockerHit{0%{transform:translateX(-50%) rotate(0)}35%{transform:translateX(-50%) rotate(24deg)}65%{transform:translateX(-50%) rotate(-10deg)}100%{transform:translateX(-50%) rotate(0)}}.door-wrap.open .door-panel{transform:rotateY(-102deg);box-shadow:inset -18px 0 30px rgba(0,0,0,.2),-30px 0 50px rgba(50,20,10,.18)}.door-wrap.open .knocker{opacity:0;transform:translateX(-50%) scale(.7);transition:.3s}.door-wrap.knock .door-panel{animation:doorThump .38s ease}@keyframes doorThump{0%,100%{transform:translateX(0)}35%{transform:translateX(-5px)}65%{transform:translateX(3px)}}.door-hint{font-family:Caveat;font-size:1.55rem}.dots{display:flex;gap:8px;justify-content:center;margin:7px}.dot{width:10px;height:10px;border-radius:50%;background:#d8a0b1}.dot.active{background:#7e2349;box-shadow:0 0 0 5px rgba(126,35,73,.1)}
 /* rooms */
 .room-head{text-align:center;max-width:850px;margin:0 auto 30px}.room-head h2{font-size:clamp(2.2rem,5vw,4.6rem);line-height:.95;margin:8px 0}.room-head p{font-family:Caveat;font-size:1.55rem;margin:10px auto;color:#74435a}.room-nav{position:fixed;z-index:20;left:50%;bottom:18px;transform:translateX(-50%);display:flex;gap:8px;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.78);backdrop-filter:blur(14px);box-shadow:0 12px 35px rgba(83,27,48,.14)}.room-nav button{width:40px;height:40px;border-radius:50%;border:1px dashed #d69aae;background:#fff;font-size:1rem;cursor:pointer}.room-nav button.current{background:#ed4e87;color:white;border-color:#ed4e87}.hide{display:none!important}
 
@@ -46,6 +46,80 @@
 /* modal */
 .modal{position:fixed;inset:0;z-index:100;background:rgba(50,13,30,.45);backdrop-filter:blur(10px);display:grid;place-items:center;padding:20px}.modal-card{width:min(620px,100%);background:#fffaf1;border-radius:28px;padding:32px;box-shadow:0 30px 100px rgba(0,0,0,.25);text-align:center}.modal-card h3{font-size:2rem;margin-top:0}.modal-card p{font-family:Caveat;font-size:1.6rem}.close{float:right;border:0;background:#f8dce5;border-radius:50%;width:38px;height:38px;cursor:pointer;font-size:1.2rem}
 @media(max-width:760px){.screen{padding:30px 18px 90px}.gallery-grid{grid-template-columns:repeat(2,1fr)}.card:nth-child(n){grid-column:span 1;grid-row:span 1}.card:nth-child(1),.card:nth-child(6){grid-row:span 2}.exhibit{grid-template-columns:1fr;gap:20px}.frame img{height:55vh}.notes{grid-template-columns:1fr}.promise-card{padding:28px 18px}.promise{font-size:1.15rem}.room-nav{bottom:10px}.room-nav button{width:34px;height:34px;font-size:.85rem}.door-wrap{height:58vh;min-height:400px}.tree-stage{min-height:520px}.tree{height:350px}.title{font-size:clamp(3.3rem,17vw,5.5rem)}}
+
+/* --- V4: reel-style horizontal rooms --- */
+html{scroll-behavior:auto}
+body{overflow:hidden}
+.site{height:100svh;min-height:100svh;position:relative;overflow:hidden}
+.screen{position:absolute;inset:0;width:100%;height:100%;min-height:100%;padding:clamp(18px,3.5vw,52px);transform:translate3d(100%,0,0);opacity:0;pointer-events:none;transition:transform .82s cubic-bezier(.22,.78,.18,1),opacity .5s ease;will-change:transform}
+.screen.active{transform:translate3d(0,0,0);opacity:1;pointer-events:auto;z-index:2}
+.screen.past{transform:translate3d(-100%,0,0);opacity:.45}
+.screen .content{max-height:calc(100svh - 54px)}
+.room-head{margin-bottom:18px}
+.room-head h2{font-size:clamp(2rem,4.4vw,4rem)}
+.room-head p{font-size:clamp(1.15rem,2vw,1.5rem);margin:6px auto}
+.room-nav{display:none!important}
+.next-room{position:absolute;right:clamp(18px,4vw,54px);bottom:clamp(18px,3vw,38px);z-index:12;border:1px solid rgba(126,35,73,.12);background:rgba(255,255,255,.68);backdrop-filter:blur(14px);color:var(--ink);border-radius:999px;padding:11px 16px 11px 18px;font:700 .95rem 'Baloo 2';box-shadow:0 12px 30px rgba(83,27,48,.14);cursor:pointer;opacity:0;transform:translateY(12px);transition:.28s ease;pointer-events:none}
+.screen:hover .next-room,.screen.active .next-room:focus-visible{opacity:1;transform:none;pointer-events:auto}
+.next-room:hover{background:#fff;transform:translateY(-3px)!important;box-shadow:0 16px 34px rgba(83,27,48,.2)}
+.back-room{position:absolute;left:clamp(18px,4vw,54px);bottom:clamp(18px,3vw,38px);z-index:12;border:0;background:transparent;color:#8d526a;font:700 .92rem 'Baloo 2';cursor:pointer;opacity:.55;transition:.2s}.back-room:hover{opacity:1;transform:translateX(-3px)}
+#garden .next-room{display:none}
+#final .next-room{display:none}
+#door .content{transform:scale(.92)}
+#gift .content{transform:scale(.92)}
+.gallery-grid{max-height:calc(100svh - 190px);grid-auto-rows:minmax(60px,1fr);overflow:hidden}
+.card img{object-fit:cover}
+.exhibit{grid-template-columns:minmax(0,1.12fr) minmax(280px,.88fr);gap:28px;max-height:calc(100svh - 170px)}
+.frame{padding:13px;max-height:calc(100svh - 175px)}
+.frame-inner{background:#fff;padding:10px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.frame-inner.landscape{aspect-ratio:16/10}.frame-inner.portrait{aspect-ratio:4/5}
+.frame img{width:100%;height:100%;max-height:calc(100svh - 220px);object-fit:contain;background:#f8f1e7}
+.exhibit-copy{padding:26px}
+.puzzle-wrap{width:min(520px,72vh,100%)}
+.puzzle-info{margin:10px}.win{min-height:30px}
+.tree-stage{min-height:0;height:min(58vh,540px)}
+.tree{height:min(42vh,370px)}
+.promise-card{max-height:calc(100svh - 180px);padding:24px clamp(20px,4vw,50px);overflow:hidden}
+.promise{padding:10px 0;font-size:1.15rem}
+.letter-wrap{max-height:calc(100svh - 175px);overflow:auto;padding:clamp(20px,3vw,40px)}
+.letter{font-size:clamp(1.05rem,1.7vw,1.4rem);line-height:1.42}
+.final-card h2{font-size:clamp(2.5rem,6vw,5.5rem)}
+@media (hover:none){.screen .next-room{opacity:1;transform:none;pointer-events:auto}}
+@media(max-width:760px){
+  .screen{padding:70px 16px 70px}
+  .screen .content{max-height:calc(100svh - 120px)}
+  .gallery-grid{max-height:calc(100svh - 210px);gap:10px}
+  .exhibit{grid-template-columns:1fr;gap:14px;max-height:calc(100svh - 170px)}
+  .frame{max-height:46vh}.frame-inner.landscape{aspect-ratio:16/10}.frame-inner.portrait{aspect-ratio:4/5}
+  .frame img{max-height:42vh}
+  .exhibit-copy{padding:18px}.exhibit-copy h3{font-size:2rem!important}
+  .puzzle-wrap{width:min(72vw,430px)}
+  .notes{grid-template-columns:repeat(2,1fr);gap:10px}.note{min-height:150px;padding:15px}.note .secret{font-size:1.35rem}
+  .promise-card{max-height:calc(100svh - 190px)}
+  .tree-stage{height:52vh}.tree{height:34vh}
+  .next-room{right:14px;bottom:16px}
+}
+@media(max-width:470px){.notes{grid-template-columns:1fr 1fr}.note{min-height:140px}.note .tease{font-size:.82rem}.note .secret{font-size:1.15rem}.room-head h2{font-size:2rem}.room-head p{font-size:1.05rem}.arrows .btn{padding:11px 16px}}
+
+/* --- V5: full-screen cinematic mechanics --- */
+body{background:#f9d8e3}
+.screen{padding:clamp(14px,2.2vw,30px);overflow:hidden}
+.screen .content{width:min(1180px,94vw);max-height:calc(100svh - 28px)}
+#garden .content{transform:translateY(-1vh)}
+#door .content{transform:none}
+#door .room-head{margin-bottom:0}
+#door .door-wrap{width:min(400px,28vw);height:min(59vh,560px);min-height:360px}
+#door .door-hint{margin-top:0}
+.gallery-grid .card img{object-fit:contain;background:#f7eee5}
+.gallery-grid .card{display:flex;flex-direction:column;justify-content:center}
+.exhibit{max-height:calc(100svh - 135px)}
+.exhibit .frame{height:min(68vh,620px);display:flex;align-items:center;justify-content:center}
+.exhibit .frame-inner{width:100%;height:100%;min-height:0}
+.exhibit .frame img{width:100%;height:100%;max-height:none;object-fit:contain}
+.exhibit-copy{max-height:68vh;overflow:auto}
+.puzzle-wrap{width:min(470px,62vh,72vw)}
+.puzzle .tile{background-repeat:no-repeat}
+@media(max-width:760px){#door .door-wrap{width:min(300px,62vw);height:min(53vh,470px);min-height:320px}.exhibit{max-height:calc(100svh - 150px)}.exhibit .frame{height:min(48vh,390px)}.exhibit-copy{max-height:30vh}.screen .content{width:min(94vw,680px)}}
 </style>
 </head>
 <body>
@@ -53,11 +127,26 @@
   <div class="heart-rain" id="heartRain"></div>
   <section class="screen" id="garden">
     <div class="grain"></div><div class="flowers"><i class="flower f1"></i><i class="flower f2"></i><i class="flower f3"></i><i class="flower f4"></i><i class="flower f5"></i><i class="vine" style="left:-50px"></i><i class="vine" style="right:-90px;transform:scaleX(-1) rotate(22deg)"></i></div>
-    <div class="content garden-copy"><div class="eyebrow">A tiny world made for one person</div><h1 class="title script">Happy Daughter's<br><span>bachaa day ♥</span></h1><p class="sub">Mera pyaara Guggieee bchaaa…<br>there's a little door waiting for you.</p><button class="btn enter" onclick="go('door')">Enter my little world →</button></div>
+    <div class="content garden-copy"><div class="eyebrow">A tiny world made for one person</div><h1 class="title script">Happy Daughter's<br><span>bachaa day ♥</span></h1><p class="sub">Mera pyaara Guggieee bchaaa…<br>there's a little door waiting for you.</p><button class="btn enter" onclick="startSoundtrack();go('door')">Enter my little world →</button></div>
   </section>
 
   <section class="screen" id="door">
-    <div class="grain"></div><div class="content door-stage"><div class="eyebrow">Room 01 · The little entrance</div><h2 class="title serif">Knock three times.</h2><p class="sub">Every knock is a tiny promise that I am still here.</p><div class="door-wrap" id="doorWrap" onclick="knock()"><div class="door-frame"></div><div class="door-panel"></div><div class="knob"></div></div><div class="dots"><i class="dot" id="d1"></i><i class="dot" id="d2"></i><i class="dot" id="d3"></i></div><div class="door-hint" id="doorHint">Tap the door… knock ×3</div></div>
+    <div class="grain"></div>
+    <div class="content door-stage">
+      <div class="eyebrow">Room 01 · The little entrance</div>
+      <h2 class="title serif">Someone is waiting inside.</h2>
+      <p class="sub">Touch the little knocker.</p>
+      <div class="door-wrap" id="doorWrap" onclick="knock(event)" role="button" aria-label="Knock on the door">
+        <div class="door-frame"></div>
+        <div class="door-panel">
+          <div class="door-panel-inset top"></div><div class="door-panel-inset bottom"></div>
+          <div class="knocker" id="knocker"><span class="knocker-ring"></span><span class="knocker-handle"></span></div>
+          <div class="door-knob"></div>
+        </div>
+      </div>
+      <div class="dots" aria-hidden="true"><i class="dot" id="d1"></i><i class="dot" id="d2"></i><i class="dot" id="d3"></i></div>
+      <div class="door-hint" id="doorHint">A tiny knock, and the story begins.</div>
+    </div>
   </section>
 
   <section class="screen" id="gift">
@@ -105,7 +194,7 @@
   <div class="music-meta"><strong>Our soundtrack</strong><span>♪ Dil Diyan Gallan</span></div>
   <div class="music-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
 </div>
-<audio id="bgMusic" preload="auto" src="assets/dil-diyan-gallan.mp3"></audio>
+<audio id="bgMusic" preload="auto" loop src="assets/dil-diyan-gallan.mp3"></audio>
 <div class="modal hide" id="modal"><div class="modal-card"><button class="close" onclick="closeModal()">×</button><div id="modalEmoji" style="font-size:3rem">💌</div><h3 id="modalTitle">A little note</h3><p id="modalBody"></p></div></div>
 <script>
 const rooms=['garden','door','gift','gallery','exhibit','puzzle','notes','treeRoom','promises','letterRoom','final'];
@@ -141,7 +230,8 @@ const musicObserver=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersec
 ['gallery','exhibit','letterRoom','final'].forEach(id=>musicObserver.observe(document.getElementById(id)));
 
 function hearts(n=24){const box=document.getElementById('heartRain');for(let i=0;i<n;i++){const h=document.createElement('span');h.className='rain-heart';h.textContent=['♥','♡','✿','❀'][Math.floor(Math.random()*4)];h.style.left=Math.random()*100+'%';h.style.animationDuration=(4+Math.random()*5)+'s';h.style.animationDelay=(Math.random()*1.5)+'s';h.style.fontSize=(14+Math.random()*22)+'px';box.appendChild(h);setTimeout(()=>h.remove(),10000)}}
-let knocks=0;function knock(){if(document.getElementById('doorWrap').classList.contains('open'))return;knocks++;document.getElementById('doorWrap').classList.remove('knock');void document.getElementById('doorWrap').offsetWidth;document.getElementById('doorWrap').classList.add('knock');document.getElementById('d'+knocks).classList.add('active');if(knocks===3){setTimeout(()=>{document.getElementById('doorWrap').classList.add('open');document.getElementById('doorHint').textContent='Welcome in, my Guggieee ♥';hearts(20);setTimeout(()=>go('gift'),900)},600)}}
+let knocks=0;let knockAudioCtx=null;function knockSound(){try{knockAudioCtx=knockAudioCtx||new (window.AudioContext||window.webkitAudioContext)();const o=knockAudioCtx.createOscillator(),g=knockAudioCtx.createGain();o.type='triangle';o.frequency.setValueAtTime(125,knockAudioCtx.currentTime);o.frequency.exponentialRampToValueAtTime(72,knockAudioCtx.currentTime+.12);g.gain.setValueAtTime(.0001,knockAudioCtx.currentTime);g.gain.exponentialRampToValueAtTime(.22,knockAudioCtx.currentTime+.012);g.gain.exponentialRampToValueAtTime(.0001,knockAudioCtx.currentTime+.16);o.connect(g).connect(knockAudioCtx.destination);o.start();o.stop(knockAudioCtx.currentTime+.17)}catch(e){}}
+function knock(ev){if(ev)ev.stopPropagation();const wrap=document.getElementById('doorWrap');if(wrap.classList.contains('open'))return;startSoundtrack();knocks++;knockSound();wrap.classList.remove('knock');void wrap.offsetWidth;wrap.classList.add('knock');const dot=document.getElementById('d'+knocks);if(dot)dot.classList.add('active');if(knocks===3){setTimeout(()=>{wrap.classList.add('open');document.getElementById('doorHint').textContent='Come in, my Guggieee ♥';hearts(20);setTimeout(()=>go('gift'),900)},520)}}
 function openGift(){const b=document.getElementById('giftBox'),t=document.getElementById('giftText');startSoundtrack();b.style.transform='scale(1.2) rotate(8deg)';setTimeout(()=>{b.textContent='💐';t.textContent='A garden of memories, waiting inside…';hearts(12);setTimeout(()=>go('gallery'),900)},450)}
 const exhibits=[
 ['assets/memory-02.jpg','The day looked softer.','Some photos do not need a caption. They just need to be kept.'],
@@ -153,18 +243,60 @@ const exhibits=[
 ['assets/memory-07.jpg','Caught being adorable.','You make keeping photos dangerously easy.'],
 ['assets/memory-08.png','Our little museum.','A whole collage could still never fit everything I feel.'],
 ['assets/memory-09.jpg','One more for the wall.','Because I am not done collecting moments with you.']];
-let ex=0;function renderEx(){document.getElementById('exhibitImg').src=exhibits[ex][0];document.getElementById('exTitle').textContent=exhibits[ex][1];document.getElementById('exCopy').textContent=exhibits[ex][2];document.getElementById('exNum').textContent=ex+1}function nextEx(){ex=(ex+1)%exhibits.length;renderEx()}function prevEx(){ex=(ex-1+exhibits.length)%exhibits.length;renderEx()}
+let ex=0;function renderEx(){const im=document.getElementById('exhibitImg');const fi=document.querySelector('.frame-inner');im.src=exhibits[ex][0];im.onload=()=>{fi.classList.toggle('landscape',im.naturalWidth>=im.naturalHeight);fi.classList.toggle('portrait',im.naturalWidth<im.naturalHeight)};document.getElementById('exTitle').textContent=exhibits[ex][1];document.getElementById('exCopy').textContent=exhibits[ex][2];document.getElementById('exNum').textContent=ex+1}function nextEx(){if(ex===exhibits.length-1){go('puzzle');return}ex++;renderEx()}function prevEx(){if(ex===0){go('gallery');return}ex--;renderEx()}
 // puzzle
-const puzzle=document.getElementById('puzzleBoard');let order=[0,1,2,3,4,5,6,7,8],selected=null,moves=0,startTime=null,timerInt=null;const img='assets/memory-03.jpg';function buildPuzzle(){puzzle.innerHTML='';order.forEach((n,pos)=>{const t=document.createElement('button');t.className='tile';t.style.backgroundImage=`url('${img}')`;t.style.backgroundPosition=`${(n%3)*50}% ${Math.floor(n/3)*50}%`;t.onclick=()=>selectTile(pos);puzzle.appendChild(t)})}function selectTile(pos){if(startTime===null){startTime=Date.now();timerInt=setInterval(()=>{const s=Math.floor((Date.now()-startTime)/1000);document.getElementById('timer').textContent='00:'+String(s).padStart(2,'0')},1000)}if(selected===null){selected=pos;puzzle.children[pos].classList.add('selected');return}if(selected===pos){puzzle.children[pos].classList.remove('selected');selected=null;return} [order[selected],order[pos]]=[order[pos],order[selected]];moves++;document.getElementById('moves').textContent=moves;selected=null;buildPuzzle();if(order.every((v,i)=>v===i)){clearInterval(timerInt);document.getElementById('win').textContent='You put us back together. ♥';hearts(18)}}function shufflePuzzle(){do{order=[...Array(9)].map((_,i)=>i).sort(()=>Math.random()-.5)}while(order.every((v,i)=>v===i));moves=0;selected=null;startTime=null;clearInterval(timerInt);document.getElementById('moves').textContent='0';document.getElementById('timer').textContent='00:00';document.getElementById('win').textContent='';buildPuzzle()}buildPuzzle();
+const puzzle=document.getElementById('puzzleBoard');let order=[0,1,2,3,4,5,6,7,8],selected=null,moves=0,startTime=null,timerInt=null;const img='assets/memory-01.jpg';function buildPuzzle(){puzzle.innerHTML='';order.forEach((n,pos)=>{const t=document.createElement('button');t.className='tile';t.style.backgroundImage=`url('${img}')`;t.style.backgroundPosition=`${(n%3)*50}% ${Math.floor(n/3)*50}%`;t.onclick=()=>selectTile(pos);puzzle.appendChild(t)})}function selectTile(pos){if(startTime===null){startTime=Date.now();timerInt=setInterval(()=>{const s=Math.floor((Date.now()-startTime)/1000);document.getElementById('timer').textContent='00:'+String(s).padStart(2,'0')},1000)}if(selected===null){selected=pos;puzzle.children[pos].classList.add('selected');return}if(selected===pos){puzzle.children[pos].classList.remove('selected');selected=null;return} [order[selected],order[pos]]=[order[pos],order[selected]];moves++;document.getElementById('moves').textContent=moves;selected=null;buildPuzzle();if(order.every((v,i)=>v===i)){clearInterval(timerInt);document.getElementById('win').textContent='You put us back together. ♥';hearts(18)}}function shufflePuzzle(){do{order=[...Array(9)].map((_,i)=>i).sort(()=>Math.random()-.5)}while(order.every((v,i)=>v===i));moves=0;selected=null;startTime=null;clearInterval(timerInt);document.getElementById('moves').textContent='0';document.getElementById('timer').textContent='00:00';document.getElementById('win').textContent='';buildPuzzle()}buildPuzzle();
 // notes
-const noteData=[['🌷','Note 1','You make normal days feel like something worth remembering.'],['🫶','Note 2','Your smile has a very unfair amount of power over me.'],['☁️','Note 3','If home had a person-shaped version, I think it would feel like you.'],['💌','Note 4','No matter how many rooms I make, I still want one more memory with you.']];const ng=document.getElementById('notesGrid');noteData.forEach((n,i)=>{const d=document.createElement('button');d.className='note';d.innerHTML=`<div style="font-size:2rem">${n[0]}</div><div class="num">${n[1]}</div><div class="tease" style="margin:12px 0">tap to open</div><div class="secret">${n[2]}</div>`;d.onclick=()=>{if(!d.classList.contains('open')){d.classList.add('open');document.getElementById('noteCount').textContent=document.querySelectorAll('.note.open').length;showModal(n[1],n[2],n[0])}};ng.appendChild(d)});
+const noteData=[['🏠','Note 1','You feel like home.'],['🌷','Note 2','You make ordinary days feel like something worth keeping.'],['🫶','Note 3','I love you and every ordinary day with you.'],['💌','Note 4','I’m yours forever and ever.']];const ng=document.getElementById('notesGrid');noteData.forEach((n,i)=>{const d=document.createElement('button');d.className='note';d.innerHTML=`<div style="font-size:2rem">${n[0]}</div><div class="num">${n[1]}</div><div class="tease" style="margin:12px 0">tap to open</div><div class="secret">${n[2]}</div>`;d.onclick=()=>{if(!d.classList.contains('open')){d.classList.add('open');document.getElementById('noteCount').textContent=document.querySelectorAll('.note.open').length;showModal(n[1],n[2],n[0])}};ng.appendChild(d)});
 function showModal(t,b,e){document.getElementById('modalTitle').textContent=t;document.getElementById('modalBody').textContent=b;document.getElementById('modalEmoji').textContent=e;document.getElementById('modal').classList.remove('hide')}function closeModal(){document.getElementById('modal').classList.add('hide')}
 // promises
 const promises=['Never go to bed angry.','Hold your hand in every crowd.','Choose you again, every ordinary morning.','Always love you and pamper you.','Love you more and more.'];const pl=document.getElementById('promiseList');promises.forEach((p,i)=>{const row=document.createElement('label');row.className='promise';row.innerHTML=`<input type="checkbox"><span>${i+1}. ${p}</span>`;row.querySelector('input').onchange=e=>{row.classList.toggle('checked',e.target.checked);updatePromises()};pl.appendChild(row)});function updatePromises(){const n=document.querySelectorAll('.promise input:checked').length;document.getElementById('progressBar').style.width=(n/5*100)+'%';const b=document.getElementById('promiseBtn');b.textContent=`Tick every promise (${n}/5)`;b.disabled=n!==5;if(n===5){b.textContent='All promises held ♥';b.disabled=false;hearts(12)}}document.getElementById('promiseBtn').onclick=()=>{if(document.querySelectorAll('.promise input:checked').length===5){showModal('Promise accepted ♥','I will keep choosing the little things that make us feel like us.','🤍')}};
-const letter=`To My Guggie bchaa,\n\nHappy daughter's bachaa day to my pyaara sa bchaaa ❤️\n\nKabhi kabhi main sochta hoon ki itni saari feelings ko words mein kaise fit karu. Aap meri life ka woh part ho jise explain karna mushkil hai, kyunki aap sirf meri life mein ho nahi — aap meri life ko feel karwate ho.\n\nAapke saath chhoti chhoti cheezein bhi special lagti hain. Ek normal conversation, ek random smile, ek chhota sa plan, ya bas aapka mere paas hona. Mujhe inhi little moments mein sabse zyada happiness milti hai.\n\nMain perfect nahi hoon, aur shayad kabhi kabhi meri baatein bhi perfect nahi hoti. But one thing I know for sure: jo feeling mere dil mein aapke liye hai, woh genuine hai. Main aapko sirf happy moments mein nahi, balki boring days, difficult days, silly days — har version mein choose karna chahta hoon.\n\nAap meri favourite memory bhi ho aur meri favourite future thought bhi. Aaj jitna aapko love karta hoon, kal usse zyada karna chahta hoon. Aur life mujhe baar-baar choose karne ka chance de, main baar-baar aapko hi choose karunga ❤️♾️\n\nI love you Guggie baby Beshumaar.\n\nAap hamesha meri Guggieee bchaaa rahogi. 🫂❤️`;
+const letter=`To My Guggie bchaa,
+
+Happy daughter's bachaa day to my pyaara sa bchaaa ❤️
+
+Kabhi kabhi main sochta hoon ki itni saari feelings ko words mein kaise fit karu. Aap meri life ka woh part ho jise explain karna mushkil hai, kyunki aap sirf meri life mein ho nahi — aap meri life ko feel karwate ho.
+
+Aapke saath chhoti chhoti cheezein bhi special lagti hain. Ek normal conversation, ek random smile, ek chhota sa plan, ya bas aapka mere paas hona. Mujhe inhi little moments mein sabse zyada happiness milti hai.
+
+Main perfect nahi hoon, aur shayad kabhi kabhi meri baatein bhi perfect nahi hoti. But one thing I know for sure: jo feeling mere dil mein aapke liye hai, woh genuine hai. Main aapko sirf happy moments mein nahi, balki boring days, difficult days, silly days — har version mein choose karna chahta hoon.
+
+Aap meri favourite memory bhi ho aur meri favourite future thought bhi. Aaj jitna aapko love karta hoon, kal usse zyada karna chahta hoon. Aur life mujhe baar-baar choose karne ka chance de, main baar-baar aapko hi choose karunga ❤️♾️
+
+I love you Guggie baby Beshumaar.
+
+Aap hamesha meri Guggieee bchaaa rahogi. 🫂❤️`;
 let typed=false;const letterEl=document.getElementById('letterText');const letterObs=new IntersectionObserver(es=>{if(es[0].isIntersecting&&!typed){typed=true;let i=0;const tick=()=>{letterEl.textContent=letter.slice(0,i++);if(i<=letter.length)setTimeout(tick,13)};tick()}},{threshold:.25});letterObs.observe(document.getElementById('letterRoom'));
 function replay(){if(musicFadeTimer)clearInterval(musicFadeTimer);bgMusic.pause();bgMusic.currentTime=0;bgMusic.volume=.01;musicStarted=false;setMusicUI(false);window.scrollTo({top:0,behavior:'smooth'});setTimeout(()=>{document.getElementById('doorWrap').classList.remove('open');knocks=0;document.querySelectorAll('.dot').forEach(x=>x.classList.remove('active'));document.getElementById('doorHint').textContent='Tap the door… knock ×3';document.getElementById('giftBox').textContent='🎁';document.getElementById('giftText').textContent='tap to open'},800)}
 // gentle keyboard controls
 window.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();if(e.key==='ArrowDown')window.scrollBy({top:innerHeight,behavior:'smooth'});if(e.key==='ArrowUp')window.scrollBy({top:-innerHeight,behavior:'smooth'})});
+
+/* --- V4: horizontal room controller --- */
+const roomEls=rooms.map(id=>document.getElementById(id));
+let activeRoom='garden';
+function setRoom(id){
+  const target=rooms.indexOf(id); if(target<0)return;
+  const current=rooms.indexOf(activeRoom);
+  roomEls.forEach((el,i)=>{el.classList.remove('active','past');if(i<target)el.classList.add('past')});
+  const el=document.getElementById(id); el.classList.add('active'); activeRoom=id;
+  nav.querySelectorAll('button').forEach(b=>b.classList.toggle('current',b.dataset.id===id));
+  if(id==='letterRoom' && !typed){letterObs.observe(document.getElementById('letterRoom'));}
+}
+go=function(id){setRoom(id)};
+roomEls.forEach((el,i)=>{
+  const next=document.createElement('button'); next.className='next-room'; next.type='button'; next.innerHTML=(i<rooms.length-1?'Next room <span aria-hidden="true">→</span>':'Finish <span aria-hidden="true">♥</span>');
+  next.onclick=()=>{if(i<rooms.length-1)setRoom(rooms[i+1]);}; el.appendChild(next);
+  if(i>0){const back=document.createElement('button');back.className='back-room';back.type='button';back.textContent='← Back';back.onclick=()=>setRoom(rooms[i-1]);el.appendChild(back)}
+});
+setRoom('garden');
+// keep the song alive through the whole journey; the final room fades it out.
+bgMusic.loop=true;
+const oldFinalObserver=musicObserver;
+// Re-render the current exhibit once so its frame chooses portrait/landscape correctly.
+renderEx();
+// replay now returns to the first horizontal room.
+replay=function(){if(musicFadeTimer)clearInterval(musicFadeTimer);bgMusic.pause();bgMusic.currentTime=0;bgMusic.volume=.01;musicStarted=false;setMusicUI(false);knocks=0;document.querySelectorAll('.dot').forEach(x=>x.classList.remove('active'));document.getElementById('doorWrap').classList.remove('open');document.getElementById('doorHint').textContent='Tap the door… knock ×3';document.getElementById('giftBox').textContent='🎁';document.getElementById('giftText').textContent='tap to open';ex=0;renderEx();setRoom('garden');};
+// Keyboard navigation is horizontal now.
+window.onkeydown=(e)=>{if(e.key==='Escape')closeModal();if(e.key==='ArrowRight'){const i=rooms.indexOf(activeRoom);if(i<rooms.length-1)setRoom(rooms[i+1]);}if(e.key==='ArrowLeft'){const i=rooms.indexOf(activeRoom);if(i>0)setRoom(rooms[i-1]);}};
 </script>
 </body></html>
